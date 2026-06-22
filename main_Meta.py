@@ -54,8 +54,6 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    mode = args.mode
-
     file_dir = f"eps{args.num_eps}_{args.experiment_type}/Meta"
     file_name = f"{args.num_antennas}_{args.num_RIS_elements}_{args.num_users}_{args.power_t}_{args.lr}_{args.decay}"
 
@@ -99,7 +97,7 @@ if __name__ == "__main__":
     tbs_list = [10,30,50,80,100]
     file_id = f"NT{num_tasks}TS{num_time_steps_per_eps}BS{buffer_size}"
         
-    if mode == 'train':
+    if args.mode == 'train':
 
         restored_buffer = utils.MultiTaskReplayBuffer.load(f"./MultiTask Buffer/replay_buffer_{file_name}_{num_tasks}_{num_time_steps_per_eps}_{buffer_size}.pkl")    
         for meta_s, inner_s, tbs in itertools.product(meta_s_list, inner_s_list, tbs_list):
@@ -119,7 +117,7 @@ if __name__ == "__main__":
             meta_record = f"os{meta_s}_is{inner_s}_tbs{tbs}"
             meta_agent.save(f"./Models/Meta_Initialization_{file_name}_{meta_record}_{file_id}")
     
-    if mode == 'validation':
+    if args.mode == 'validation':
         for meta_s, inner_s, tbs in itertools.product(meta_s_list, inner_s_list, tbs_list):
             file_id = f"NT{num_tasks}TS{num_time_steps_per_eps}BS{buffer_size}"
             file_name = f"{args.num_antennas}_{args.num_RIS_elements}_{args.num_users}_{args.power_t}_{meta_init_lr}_{args.decay}" 
