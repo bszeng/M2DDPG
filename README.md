@@ -38,12 +38,12 @@ M²DDPG synergizes two complementary meta-learning mechanisms: (i) **offline met
 
 Before running the full M²DDPG, pre-collect the multi-task dataset:
 ```bash
-python main_Buffer.py --num_antennas 4 --num_RIS_elements 4 --num_users 4 --num_eps 10000 --num_time_steps_per_eps 1000 --buffer_size 500
+python main_Buffer.py --num_RIS_elements 4 --num_eps 10000 --num_time_steps_per_eps 1000 --buffer_size 500
 ```
   * Run benchmark (MC, MI and M²DDPG)
    ```
-   python main_Benchmark.py --num_antennas 4 --num_RIS_elements 4 --num_users 4
-  ```
+   python main_Benchmark.py --num_RIS_elements 4 --lr 1e-2
+   ```
 **2. Plot curves**
 * Upon completion, the result files (`.npy`) are saved in the `Learning Curves` folder (**or download from the dataset link above**). 
 To generate the figures, open and run `plot_curves.ipynb` located in that directory.
