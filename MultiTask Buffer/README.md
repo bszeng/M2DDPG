@@ -7,7 +7,7 @@ The generated replay buffer files are named as
 where `N` denotes the number of RIS elements. Four pre-collected buffers with different values of `N` are provided:
 
 | File | N | Size (GB) |
-| --- | --- | :---: |
+| --- | :---: | :---: |
 | `replay_buffer_4_4_4_30_0.001_1e-05_10000_1000_500.pkl` | 4 | 5 |
 | `replay_buffer_4_10_4_30_0.001_1e-05_10000_1000_500.pkl` | 10 | 9.2 |
 | `replay_buffer_4_20_4_30_0.001_1e-05_10000_1000_500.pkl` | 20 | 16.3 |
