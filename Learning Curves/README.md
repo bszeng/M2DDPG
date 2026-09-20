@@ -1,4 +1,4 @@
-This directory contains 5 experimental result folders. The folder names follow the pattern `4_N_4`, where `N` denotes the number of reflecting elements. Each folder stores the complete experimental data and results for the corresponding parameter setting.
+This directory contains 5 experimental result folders. The folder names follow the pattern `4_N_4`, where `N` denotes the number of reflecting elements. Each folder stores the complete experimental data and results for the corresponding parameter setting. The `plot_curves.ipynb` file generates all experimental tables and figures.
 
 ## Folder List
 
